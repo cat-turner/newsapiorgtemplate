@@ -79,23 +79,6 @@ $(document).ready(function(){
         
     });
 
-    function apiExample(url){
-        $.ajax({
-          type: 'GET',
-          url: url,
-          data: {
-            format: 'json'
-          },
-          success: function(data) {
-            return data;
-          },
-          error: function(err) {
-            console.log('error:' + err)
-          }
-        });
-        
-    }
-    
     function ajaxCall(actionUrl, successCallBack) {
     $.ajax({
         type: 'GET',
