@@ -6,7 +6,7 @@
 /*global $*/
 /*global API_KEY*/
 
-API_KEY = '8fbff174ea8e4b34ba374dcea2baf754';
+API_KEY = 'abc123';
 
 $(document).ready(function(){
     
