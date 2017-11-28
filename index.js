@@ -4,6 +4,7 @@
 // https://www.w3schools.com/tags/tag_select.asp
 
 /*global $*/
+/*global API_KEY*/
 
 API_KEY = '8fbff174ea8e4b34ba374dcea2baf754';
 
@@ -36,6 +37,11 @@ $(document).ready(function(){
         headline.setAttribute("target", "_new");
         headline.innerHTML = input.title;
         tile.appendChild(headline);
+        
+        var storyDescription = document.createElement("P");
+        storyDescription.setAttribute("class", "story-text");
+        storyDescription.innerHTML = input.description;
+        tile.appendChild(storyDescription);
         return tile;
         
     }
@@ -58,43 +64,22 @@ $(document).ready(function(){
         
     }
     
-    var url = 'https://newsapi.org/v2/sources?apiKey=8fbff174ea8e4b34ba374dcea2baf754';
+    var url = `https://newsapi.org/v2/sources?apiKey=${API_KEY}`;
     ajaxCall(url, fillDropDown);
+
     document.getElementById("userSelection").addEventListener('click', function(){
         var dropDown = document.getElementById("selection");
         var dropDownSelection =dropDown.options[dropDown.selectedIndex].value;
         console.log(dropDownSelection);
         url = 'https://newsapi.org/v2/top-headlines?';
         url += `sources=${dropDownSelection}`;
-        url += '&apiKey=8fbff174ea8e4b34ba374dcea2baf754';
+        url += `&apiKey=${API_KEY}`;
         ajaxCall(url, getArticles);
         
         
     });
-    
-    // url for businesses sources that report in english
-    /*var url = 'https://newsapi.org/v2/sources?' +
-                'category=business&' +
-                'language=en&' +
-                'country=us&' +
-                'apiKey=8fbff174ea8e4b34ba374dcea2baf754';*/
-    // all sources
-    //var url = 'https://newsapi.org/v2/sources?apiKey=8fbff174ea8e4b34ba374dcea2baf754';
-    //ajaxCall(url, fillDropDown);
-    
-    //top headlines
-    //var url = 'https://newsapi.org/v2/top-headlines?sources=bloomberg&apiKey=8fbff174ea8e4b34ba374dcea2baf754';
-
-    //var data = apiExample(url);
-    
 
     function apiExample(url){
-        /*var url = 'https://newsapi.org/v2/everything?' +
-              'q=Apple&' +
-              'from=2017-11-28&' +
-              'sortBy=popularity&' +
-              'apiKey=8fbff174ea8e4b34ba374dcea2baf754';*/
-    
         $.ajax({
           type: 'GET',
           url: url,
@@ -102,11 +87,6 @@ $(document).ready(function(){
             format: 'json'
           },
           success: function(data) {
-            // passed function object for data processing 
-            //console.log(data);
-            //console.log(data.status);
-            //console.log(data.sources[2].description)
-            //console.log(data.sources[8].url)
             return data;
           },
           error: function(err) {
