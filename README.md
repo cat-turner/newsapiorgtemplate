@@ -1,4 +1,4 @@
-##Project Goals
+## Project Goals
 
 Extend your newsapi.org project so that when the user clicks the submit button the site pulls the top articles from newsapi.org and displays the article headlines.
 
