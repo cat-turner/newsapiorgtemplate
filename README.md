@@ -15,3 +15,21 @@ Additional challenge
 Have the headline link to the article.
 Display the description of the article as well.
 Use bootstrap to display the information in an aesthetic way
+
+Note to reviewer:
+
+### Set up
+
+To demo app, do the following (linux):
+
+1. Export your api key as an env variable
+```
+export API_KEY="your api key"
+
+```
+
+2. Create a file called key.js, and put the API key value in there
+
+```
+echo "API_KEY='${API_KEY}';" > $(pwd)/script/key.js
+```

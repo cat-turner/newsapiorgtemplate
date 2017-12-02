@@ -5,25 +5,22 @@
 /*global $*/
 /*global API_KEY*/
 
-API_KEY = 'abc123';
-
 $(document).ready(function() {
 
-    var url = `https://newsapi.org/v2/sources?apiKey=${API_KEY}`;
+    var url = `https://newsapi.org/v2/sources?`;
     ajaxCall(url, fillDropDown);
     document.getElementById("selection").setAttribute("onchange", "SelectNews()");
 
 
 });
 
-
+// User selection will trigger get Articles
 function SelectNews() {
     var dropDown = document.getElementById("selection");
     var dropDownSelection = dropDown.options[dropDown.selectedIndex].value;
     console.log(dropDownSelection);
     var url = 'https://newsapi.org/v2/top-headlines?';
     url += `sources=${dropDownSelection}`;
-    url += `&apiKey=${API_KEY}`;
     ajaxCall(url, getArticles);
     event.preventDefault();
 };
@@ -34,7 +31,10 @@ function ajaxCall(actionUrl, successCallBack) {
         type: 'GET',
         url: actionUrl,
         data: {
-            format: 'json'
+            format: 'json',
+            country: "us",
+            language:"en",
+            apiKey:API_KEY,
         },
         success: successCallBack,
         error: function(err) {
