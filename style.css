@@ -1,12 +1,94 @@
+/*https://css-tricks.com/viewport-sized-typography/*/
+/*http://www.color-hex.com/color-palette/44325*/
+
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+  font-size: 15vh;
+}
+h2 {
+  font-size: 5.0vh;
+}
+p {
+  font-size: 2.0vh;
+}
+
+
+.jumbotron {
+    background-color:#46edc8 !important; 
+}
+
 .news-header {
-    color:blue;
+    color:#374d7c;
     margin-bottom:5px;
+    font-size: 3.0vh;
+}
+
+.news-header:hover {
+    color:#ff5978;
 }
 
 .news-tile {
-    margin-bottom:10px;
+    margin-bottom:1px;
+    padding:10px;
+}
+
+.logo {
+    text-decoration: underline
 }
 
 .story-text {
     color:grey;
+}
+
+
+.stash-button {
+    background-color: grey;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 3vh;
+    border-radius: 5px;
+
+}
+
+.stash-button:hover {
+    background-color:#ff5978;
+}
+
+.stashed-item {
+    background-color:#ff5978;
+    color:white;
+    text-align: center;
+    font-size: 5vh;
+    padding:10px;
+}
+
+.removed-item {
+    background-color:#fbb35a;
+    color:white;
+    text-align: center;
+    font-size: 5vh;
+    padding:10px;
+    
+}
+
+
+.site-footer {
+  background: #374d7c;
+  margin-top:50vh;
+  height:20vh;
+  width:100%;
+  padding-top:10px;
+  text-align: center;
+  font-size: 5vh;
+  color:grey;
+}
+
+.emphasis {
+    font-weight: bold;
+    color:#fdf289;
 }

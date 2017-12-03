@@ -1,39 +1,84 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>NewsAPI V1</title>
+    <title>Discover, save news to read later</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Quicksand" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    
+
 </head>
+
 <body>
-    <div class="container">
-        <div class="col">
-            <div class="jumbotron">
-                <h1>News API</h1>
-                <form id="source">
-                    <div class="form-group">
-                        <select id="selection" required class="form-control">
-                        </select>
-                    </div>
-                </form>
-                
+
+    <div class="container-fluid">
+
+        <div class="jumbotron">
+
+            <div class="row">
+                <div class="col col-lg-3"></div>
+                <div class="col col-lg-6">
+                    <div class="col">
+                        <h1><i class="fa fa-asterisk fa-border" aria-hidden="true"></i>noostash</h1></div>
+                    <h3>browse news stories, save to read later</h3>
+                    <form id="source">
+                        <div class="form-group">
+                            <select id="selection" required class="form-control form-control form-control-lg intput-lg sources">
+                                <option value="">Pick your news source.</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
             </div>
             <div class="row">
-                <ul id="headlines" style="list-style: none;">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#news" role="tab">news</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#mystash" role="tab" onclick='addStoredItems()'>my news stash</a>
+
+                    </li>
+
                 </ul>
             </div>
         </div>
-        
+        <div class="tab-content">
+            <div class="tab-pane active" id="news" role="tabpanel">
+                <p>Save an article by selecting the stash button [*] next to the article name.</p>
+                <div class="col">
+
+                    <ul id="headlines" style="list-style: none;">
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="mystash" role="tabpanel">
+                <p>Done? Remove an article by selecting the dash button [-] next to the article name.</p>
+
+                <div class="col">
+                    <ul id="stored-headlines" style="list-style: none;">
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    <div id="footer" class="site-footer">
+      <div class="container">
+        <p class="muted credit">This app was made by <a href="https://twitter.com/tinyseashells" class="emphasis">Cat Turner</a> for <a href="https://twitter.com/careerdevs" class="emphasis">CareerDevs</a>.</p>
+      </div>
+     </div>
+
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="script/key.js"></script>
     <script src="script/index.js"></script>
-    
-    
-    
+
 </body>
+
 </html>
